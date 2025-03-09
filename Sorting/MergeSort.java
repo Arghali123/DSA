@@ -26,17 +26,35 @@ public class MergeSort
       {
         temp[k++]=a[j++];
       }
-
+   
       for(int l=start;l<size;l++)
       {
         a[l]=temp[l];
       }
-
       for(int d=0;d<size;d++)
       {
         System.out.print(a[d]+" ");
       }
 
+      System.out.println();
+      
+      //array ko kunai part sort garna
+      k=0;
+      for(i=start;i<end;)
+      {
+        a[i++]=temp[k++];
+      }
+
+      for(int l=start;l<size;l++)
+      {
+        a[l]=temp[l];
+      }
+      for(int d=0;d<size;d++)
+      {
+        System.out.print(a[d]+" ");
+      }
+
+     
     }
  
     public static void main(String[] args) {
@@ -45,6 +63,7 @@ public class MergeSort
         int e=a.length;
         int m=(s+e)/2;
         MergeSort.sort(a, s,m,e);
+        MergeSort.sort(a, 3, 5, 7);
         
     }
 }
