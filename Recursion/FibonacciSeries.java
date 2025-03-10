@@ -1,4 +1,4 @@
-public class Practice {
+public class FibonacciSeries {
     static int fib(int n)
     {
         if(n==1 || n==0)
