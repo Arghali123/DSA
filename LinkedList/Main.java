@@ -112,29 +112,29 @@ public class Main {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
 
-        // linkedList.insertAtBeginning(1);
-        // linkedList.insertAtEnd(2);
-        // linkedList.insertAtEnd(3);
-        // linkedList.insertAtBeginning(0);
-        // linkedList.insertAfterNode(1, 10);
-
-        // linkedList.printList();
-
-        // linkedList.deleteAtBeginning();
-        // linkedList.printList();
-
-        // linkedList.deleteAtEnd();
-        // linkedList.printList();
-
-        //Try 
-        linkedList.insertAtEnd(1);
+        linkedList.insertAtBeginning(1);
         linkedList.insertAtEnd(2);
         linkedList.insertAtEnd(3);
-        linkedList.insertAtEnd(4);
+        linkedList.insertAtBeginning(0);
+        linkedList.insertAfterNode(1, 10);
+
         linkedList.printList();
 
-        linkedList.deleteSpecificNode(0);
+        linkedList.deleteAtBeginning();
         linkedList.printList();
+
+        linkedList.deleteAtEnd();
+        linkedList.printList();
+
+        //Try 
+        // linkedList.insertAtEnd(1);
+        // linkedList.insertAtEnd(2);
+        // linkedList.insertAtEnd(3);
+        // linkedList.insertAtEnd(4);
+        // linkedList.printList();
+
+        // linkedList.deleteSpecificNode(0);
+        // linkedList.printList();
     }
 }
 
