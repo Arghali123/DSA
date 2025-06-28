@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build C program",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "main.c",
+        "-o",
+        "main.exe"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "run C program",
+      "type": "shell",
+      "command": "main.exe",
+      "dependsOn": ["build C program"],
+      "problemMatcher":[]
+}
+]
+}

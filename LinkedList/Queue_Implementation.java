@@ -1,82 +1,77 @@
-class Node
-{
+class Node {
     int data;
     Node next;
 
-    Node(int new_data)
-    {
-        this.data=new_data;
-        this.next=null;
+    Node(int new_data) {
+        this.data = new_data;
+        this.next = null;
     }
 }
 
-class Queue
-{
-   private Node front;
-   private Node rear;
-   public Queue() 
-   {
-    front=rear=null;
-   }
+class Queue {
+    private Node front;
+    private Node rear;
 
-   public boolean isEmpty()
-   {
-    return front==null;
-   }
+    public Queue() {
+        front = rear = null;
+    }
 
-   public void enqueue(int new_data)
-   {
-    Node new_Node=new Node(new_data);
-    if(isEmpty())
-    {
-        front=rear=new_Node;
+    public boolean isEmpty() {
+        return front == null;
+    }
+
+    public void enqueue(int new_data) {
+        Node new_Node = new Node(new_data);
+        if (isEmpty()) {
+            front = rear = new_Node;
+        } else {
+            rear.next = new_Node;
+            rear = new_Node;
+        }
         printQueue();
-        return;
     }
-    rear.next=new_Node;
-    rear=new_Node;
-    printQueue();
-   }
 
-   public void dequeue()
-   {
-    if(isEmpty())
-    {
-        return;
-    }
-    Node temp=front;
-    front=front.next;
-    if(front==null)
-    {
-        rear=null;
-    }
-    printQueue();
-   }
+    public void dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty. Cannot dequeue.");
+            return;
+        }
 
-   public void printQueue()
-    {
-    if (isEmpty()) {
-        System.out.println("Queue is empty");
-        return;
+        System.out.println("Dequeuing: " + front.data);
+        front = front.next;
+
+        if (front == null) {
+            rear = null;
+        }
+        printQueue();
     }
-    Node temp = front;
-    System.out.print("Current Queue: ");
-    while (temp != null) {
-        System.out.print(temp.data + " ");
-        temp = temp.next;
+
+    public void printQueue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return;
+        }
+
+        Node temp = front;
+        System.out.print("Current Queue: ");
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
     }
-    System.out.println();
 }
-}
+
 public class Queue_Implementation {
     public static void main(String[] args) {
-        Queue q=new Queue();
+        Queue q = new Queue();
 
         q.enqueue(10);
         q.enqueue(20);
 
         q.dequeue();
         q.dequeue();
+        q.dequeue(); // Added to check empty queue handling
 
         q.enqueue(30);
         q.enqueue(40);
@@ -85,3 +80,4 @@ public class Queue_Implementation {
         q.dequeue();
     }
 }
+
