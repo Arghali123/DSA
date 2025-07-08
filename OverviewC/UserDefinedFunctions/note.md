@@ -86,3 +86,23 @@ void product()
     printf("The sum of two numbers: %d",p);
 }
 ```
+
+## Data passing mechanism to the function
+- Pass by Value
+- Pass by reference
+- Passing pointer to function
+
+## Return pointer from functions
+As we have seen in last chapter how C programming language allows to return an array from a
+function, similar way C allows you to return a pointer from a function. To do so, you would have to
+declare a function returning a pointer as in the following example:
+```
+int * myFunction()
+{
+    ......
+    ......
+}
+```
+
+Second point to remember is that, it is not good idea to return the address of a local variable to
+outside of the function so you would have to define the local variable as **static** variable.
